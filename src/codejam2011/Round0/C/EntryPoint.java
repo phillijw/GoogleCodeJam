@@ -31,7 +31,7 @@ public class EntryPoint
 		
 		for(int i=0; i < cases.size(); i++)
 		{
-			//System.out.println("Case #" + (i+1) + ": " + cases.get(i).getResults());
+			System.out.println("Case #" + (i+1) + ": " + (cases.get(i).isCrying() ? "NO" : Integer.toString(cases.get(i).getSeansSum())));
 		}
 	}
 

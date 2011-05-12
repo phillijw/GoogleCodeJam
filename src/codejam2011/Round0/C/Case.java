@@ -3,10 +3,9 @@ import java.util.*;
 
 public class Case
 {
-	List<Integer> candies;
-	List<Integer> sean = new ArrayList<Integer>();
-	List<Integer> pat = new ArrayList<Integer>();
-	PriorityQueue<Integer> possibilities = new PriorityQueue<Integer>();
+	private int seansSum;
+	private List<Integer> candies;
+	private boolean isCrying = true;
 	
 	public Case(Integer count, String input)
 	{
@@ -20,65 +19,31 @@ public class Case
 
 		Collections.sort(candies);
 		
+		//Pat's piece of candy
+		int patsXorSum = candies.get(0);
 		
-					/*	//Pat's pile
-						for (int k=0; k < i; k++)
-						{
-							pat.add(candies.get(m+k));
-						}
-						
-						//Sean's pile
-						for (int k=0; k < candies.size(); k++)
-						{
-							if (k < m || k >= m+i) {
-								sean.add(candies.get(k));
-							}
-						}
-						
-						//Check if Pat's pile = Sean's pile
-						if (xorPiles(pat, sean) && pat.size()>0 && sean.size()>0)
-						{
-							Integer total = 0;
-							for (Integer x : sean)
-							{
-								total += x;
-							}
-							possibilities.offer(total);
-						}
-						else
-						{
-							pat.clear();
-							sean.clear();
-						}
-	*/
-		
-		//System.out.println(candies.toString());
-		//System.out.println("Pat : " + pat.toString());
-		//System.out.println("Sean: " + sean.toString());
-		//System.out.println("Possibilities: " + possibilities.toString());
-	}
-	
-	private boolean xorPiles(List<Integer> a, List<Integer> b)
-	{
-		boolean retval = false;
-		Integer aTotal = 0;
-		Integer bTotal = 0;
-		
-		for (Integer i : a)
+		//Sean's candies
+		int seansXorSum = 0;
+		seansSum = 0;
+		for (int i=1; i < candies.size(); i++)
 		{
-			aTotal ^= i;
+			seansXorSum ^= candies.get(i);
+			seansSum += candies.get(i); 
 		}
 		
-		for (Integer i : b)
+		if (patsXorSum == seansXorSum)
 		{
-			bTotal ^= i;
+			isCrying = false;
 		}
-		
-		return retval;
 	}
 	
-	private void rec(Map<Integer, String> piles)
+	public boolean isCrying()
 	{
-		//
+		return isCrying;
+	}
+	
+	public int getSeansSum()
+	{
+		return this.seansSum;
 	}
 }
