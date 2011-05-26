@@ -1,4 +1,4 @@
-package codejam2010.Round0.A;
+package codejam2010.round0.a;
 
 import java.util.Observable;
 import java.util.Observer;

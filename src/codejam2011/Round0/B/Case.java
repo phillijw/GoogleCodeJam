@@ -1,4 +1,4 @@
-package codejam2011.Round0.B;
+package codejam2011.round0.b;
 import java.util.*;
 
 public class Case

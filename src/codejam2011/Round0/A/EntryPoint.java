@@ -1,4 +1,4 @@
-package codejam2011.Round0.A;
+package codejam2011.round0.a;
 import java.io.*;
 import java.util.*;
 
