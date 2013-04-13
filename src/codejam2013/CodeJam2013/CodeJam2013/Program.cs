@@ -15,7 +15,7 @@ namespace CodeJam2013
             // Choose which runner to use
             //----------------------------
             Assembly assembly = Assembly.GetExecutingAssembly();
-            var runners = assembly.GetTypes().Where(p => p.Name == "Runner").ToList(); //All "runners" will 
+            var runners = assembly.GetTypes().Where(p => p.Name == "Runner").OrderBy(p => p.FullName).ToList(); //All "runners" will 
 
             Console.WriteLine();
             Console.WriteLine(" Which runner would you like to use? ");
@@ -54,7 +54,7 @@ namespace CodeJam2013
 
             //make list of files
             var processDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
-            var inputFiles = Directory.GetFiles(processDirectory, "*.in", SearchOption.AllDirectories).Select(f => new FileInfo(f)).ToList();
+            var inputFiles = Directory.GetFiles(processDirectory, "*.in", SearchOption.AllDirectories).Select(f => new FileInfo(f)).OrderBy(f => f.FullName).ToList();
             //Console.WriteLine(files[0].Replace(processDirectory, ""));
 
             if (inputFiles.Count == 0)
