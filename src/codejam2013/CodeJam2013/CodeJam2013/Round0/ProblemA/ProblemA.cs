@@ -18,14 +18,16 @@ namespace CodeJam2013.Round0.ProblemA
 
             //Console.Write(cases);
 
-
+            var output = new List<string>();
             for (int i = 0; i < caseCount; i++)
             {
-                Console.WriteLine(Case.Run(cases.Substring(i*16, 16)));
+                var result = string.Format("Case #{0}: {1}", i + 1, Case.Run(cases.Substring(i * 16, 16)));
+                Console.WriteLine(result);
+
+                output.Add(result);
             }
 
-            //Do nothing... so far
-            return "test";
+            return string.Join("\r\n", output);
         }
     }
 }

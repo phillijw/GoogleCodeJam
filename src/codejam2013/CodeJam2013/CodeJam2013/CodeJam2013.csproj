@@ -51,6 +51,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Round0\ProblemA\A-large.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Round0\ProblemA\A-small-attempt0.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Round0\ProblemA\sample.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
