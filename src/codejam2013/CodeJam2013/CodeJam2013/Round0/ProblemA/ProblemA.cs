@@ -7,7 +7,7 @@ namespace CodeJam2013.Round0.ProblemA
 {
     class Runner : Runnable
     {
-        public string Run(FileInfo inputFile)
+        public string Run(string input)
         {
             //Do nothing... so far
             return "test";

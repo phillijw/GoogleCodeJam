@@ -84,10 +84,14 @@ namespace CodeJam2013
             Console.WriteLine("Hit [Enter] to run");
             Console.ReadLine();
             var runner = (Runnable)assembly.CreateInstance(runners[runnerChoice].FullName);
-            
+            var reader = new StreamReader(inputFiles[fileChoice].FullName);
+            var input = reader.ReadToEnd();
+            reader.Close();
             var startTime = DateTime.Now;
-            var output = runner.Run(inputFiles[fileChoice]);
+
+            var output = runner.Run(input);
             writeOutput(new FileInfo("output.txt"), output);
+            
             var endTime = DateTime.Now;
 
             Console.WriteLine(string.Format("Finished running in {0} seconds", (endTime-startTime).Seconds));
