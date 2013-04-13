@@ -62,6 +62,12 @@
     <None Include="Round0\ProblemA\sample.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Round0\ProblemB\B-large.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Round0\ProblemB\B-small-attempt0.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Round0\ProblemB\sample.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
