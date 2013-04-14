@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 using System;
 
-namespace CodeJam2013.Round0.ProblemC
+namespace CodeJam2013.Round0.ProblemD
 {
     class Runner : Runnable
     {
@@ -16,13 +16,17 @@ namespace CodeJam2013.Round0.ProblemC
 
 
             var output = new List<string>();
+            var startingLine = 0;
             for (int i = 0; i < caseCount; i++)
             {
-                Console.WriteLine(string.Format("Starting Case #{0}", i));
-                var result = string.Format("Case #{0}: {1}", i+1, Case.Run(cases[i]));
+                var k = Int32.Parse(cases[startingLine].Split(' ')[0]);
+                var n = Int32.Parse(cases[startingLine].Split(' ')[1]);
+                var caseLines = string.Join("\n", cases.GetRange(startingLine, n+2));
+                var result = string.Format("Case #{0}: {1}", i+1, Case.Run(caseLines));
                 Console.WriteLine(result);
 
                 output.Add(result);
+                startingLine += n+1;
             }
 
             return string.Join("\r\n", output);

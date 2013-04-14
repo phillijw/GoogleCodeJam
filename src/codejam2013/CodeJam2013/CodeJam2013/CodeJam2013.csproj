@@ -51,6 +51,8 @@
     <Compile Include="Round0\ProblemB\Runner.cs" />
     <Compile Include="Round0\ProblemC\Case.cs" />
     <Compile Include="Round0\ProblemC\Runner.cs" />
+    <Compile Include="Round0\ProblemD\Case.cs" />
+    <Compile Include="Round0\ProblemD\Runner.cs" />
     <Compile Include="Runnable.cs" />
   </ItemGroup>
   <ItemGroup />
@@ -73,10 +75,16 @@
     <None Include="Round0\ProblemB\sample.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Round0\ProblemC\C-large-1.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Round0\ProblemC\C-small-attempt0.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Round0\ProblemC\sample.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Round0\ProblemD\sample.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
