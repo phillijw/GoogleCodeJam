@@ -12,16 +12,18 @@ namespace CodeJam2014.Round0.ProblemA
         {
             input = input.Replace("\r\n", "\n");
             input = input.Replace("\n\n", "\n"); //Get rid of empty lines because they'll just get in the way
-            var lines = input.Split('\n').ToList();
-            var caseCount = Int32.Parse(lines[0]);
-            var cases = input.Substring(input.IndexOf("\n")).Replace("\n", "");
+            var rawLines = input.Split('\n').ToList();
+            var caseCount = Int32.Parse(rawLines[0]);
+            var lines = input.Substring(input.IndexOf("\n") + 1).Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
+            var cases = lines.Skip(0).Take(10);
 
             //Console.Write(cases);
 
             var output = new List<string>();
             for (int i = 0; i < caseCount; i++)
             {
-                var result = string.Format("Case #{0}: {1}", i + 1, Case.Run(cases.Substring(i * 16, 16)));
+                var c = string.Join(" ", lines.Skip(i * 10).Take(10));
+                var result = string.Format("Case #{0}: {1}", i + 1, Case.Run(c));
                 Console.WriteLine(result);
 
                 output.Add(result);
