@@ -14,16 +14,12 @@ namespace CodeJam2014.Round0.ProblemB
             input = input.Replace("\n\n", "\n"); //Get rid of empty lines because they'll just get in the way
             var rawLines = input.Split('\n').ToList();
             var caseCount = Int32.Parse(rawLines[0]);
-            var lines = input.Substring(input.IndexOf("\n") + 1).Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
-            var cases = lines.Skip(0).Take(10);
-
-            //Console.Write(cases);
+            var lines = input.Substring(input.IndexOf("\n")).Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
 
             var output = new List<string>();
             for (int i = 0; i < caseCount; i++)
             {
-                var c = string.Join(" ", lines.Skip(i * 10).Take(10));
-                var result = string.Format("Case #{0}: {1}", i + 1, Case.Run(c));
+                var result = string.Format("Case #{0}: {1}", i + 1, Case.Run(lines[i]));
                 Console.WriteLine(result);
 
                 output.Add(result);
