@@ -47,12 +47,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Round0\ProblemA\Case.cs" />
     <Compile Include="Round0\ProblemA\Runner.cs" />
+    <Compile Include="Round0\ProblemB\Case.cs" />
+    <Compile Include="Round0\ProblemB\Runner.cs" />
     <Compile Include="Runnable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Round0\ProblemA\sample.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Round0\ProblemB\sample.in" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
